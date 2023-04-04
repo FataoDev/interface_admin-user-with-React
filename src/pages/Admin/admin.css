@@ -1,32 +1,49 @@
 #admin{
     display: flex;
+    margin-left: 20px;
+    margin-top: 10px;
 }
 .AHeader{
+    color: #0b54d2;
+    padding-left: 30px;
     text-align: center;
+    font-weight: 900;
     line-height: 50px;
     background-color: grey;
+    box-shadow: 5px 5px 5px 5px solid #0b54d2;
     display: flex;
     justify-content: space-between;
 }
-.AHeader button{
+#btn-header{
     width: auto;
+    color: white;
     font-size: 13px;
+    font-weight: 900;
+    padding: 5px;
     height: fit-content;
-    margin-top: 15px;
+    margin-top: 10px;border-radius: 10px;
     margin-right: 15px;
+    background-color: #0b54d2;
 }
+#btn-header:hover{
+    background-color: rgb(255, 132, 0);
+}
+
 .SideMenu{
+    padding-left: 15px;
+    padding-right: 15px;
     flex-grow: 1;
     border-right: solid 1px grey;
 }
 #admin_body{
     flex-grow: 6;
-    padding-left: 15px;
+    padding-left: 25px;
 }
 
 /* ------------------------------------------------------------------------- */
 
 .SideMenu ul{
+    padding-left: 25px;
     list-style: none;
 }
 .SideMenu ul li a{

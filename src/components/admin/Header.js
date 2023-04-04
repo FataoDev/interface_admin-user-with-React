@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import {accountService} from '@/_services/account.service';
+import {accountService} from '@/_services/account_service';
+import '@/pages/Admin/admin.css'
 
 const Header = () => {
     let navigate= useNavigate()
@@ -12,7 +13,7 @@ const Header = () => {
     return (
         <div className='AHeader'>
             Header admin !
-            <button onClick={logout}>Déconnecter</button>
+            <button onClick={logout} id='btn-header'>Déconnecter</button>
         </div>
     );
 };

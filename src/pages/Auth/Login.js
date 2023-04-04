@@ -1,7 +1,7 @@
 import React, {useState, useRef,useEffect} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
-import { accountService } from '@/_services/account.service';
+import { accountService } from '@/_services/account_service';
 import "./auth.css";
 import register from "@/pages/Auth/register.svg"
 import login from "@/pages/Auth/log.svg"
@@ -119,7 +119,7 @@ const Login = () => {
                     <input type="password" name='password' value={credentials.password} onChange={onChange} placeholder="Password" />
                 </div>
                 <input type="submit" value="Login" className="btn solid" />
-                <p className="social-text">Or Sign in with social platforms</p>
+                <p className="social-text">Ou connectez vous par</p>
                 <div className="social-media">
                     <Link to="#">
                         <i className="fab fa-facebook-f"></i>
@@ -161,7 +161,7 @@ const Login = () => {
                     <input type="password" name='password' value={credentialsinscript.password} onChange={onChangeinscript} placeholder="Password"/>
                 </div>
                 <input type="submit" className="btn" value="Sign up" ref={btn} />
-                <p className="social-text">Or Sign up with social platforms</p>
+                <p className="social-text">Ou s'inscrire avec </p>
                 <div className="social-media">
                     <Link to="#">
                         <i className="fab fa-facebook-f"></i>
@@ -183,10 +183,9 @@ const Login = () => {
         <div className="panels-container">
             <div className="panel left-panel">
             <div className="content">
-                <h3>New here ?</h3>
+                <h3>Nouveau ici ?</h3>
                 <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-                ex ratione. Aliquid!
+                Ceci est mon premier site avec react JS et une api express
                 </p>
                 <button className="btn transparent" id="sign-up-btn" >
                 Inscription
@@ -196,10 +195,9 @@ const Login = () => {
             </div>
             <div className="panel right-panel">
             <div className="content">
-                <h3>One of us ?</h3>
+                <h3>Vous avez un compte ?</h3>
                 <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                laboriosam ad deleniti.
+                Connectez vous à travers vos identifiant et mot de passe que vous avez enregistré précédement
                 </p>
                 <button className="btn transparent" id="sign-in-btn">
                 Connexion

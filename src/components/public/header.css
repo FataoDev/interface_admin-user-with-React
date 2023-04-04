@@ -1,9 +1,11 @@
 .pheader {
+    margin-top: 30px;
     text-align: center;
     border-bottom: solid 1px grey;
-  }
+}
 
 .pheader ul{
+    margin-bottom: 15px;
     list-style: none;
     padding: 0px;
 }
