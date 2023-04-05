@@ -12,7 +12,7 @@ const Header = () => {
 
     return (
         <div className='AHeader'>
-            Header admin !
+            Interface administrateur
             <button onClick={logout} id='btn-header'>Déconnecter</button>
         </div>
     );

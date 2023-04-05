@@ -50,3 +50,14 @@
     text-decoration: none;
     color: black;
 }
+
+/******************************************************/
+.del_ubtn{
+    margin-right: 15px;
+    cursor: pointer;
+    color: red;
+}
+th,td{
+    margin: 0;
+    padding-right: 15px;
+}

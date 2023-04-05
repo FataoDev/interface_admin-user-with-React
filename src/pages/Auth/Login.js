@@ -1,7 +1,7 @@
 import React, {useState, useRef,useEffect} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
-import { accountService } from '@/_services/account_service';
+import { accountService } from '@/_services';
 import "./auth.css";
 import register from "@/pages/Auth/register.svg"
 import login from "@/pages/Auth/log.svg"

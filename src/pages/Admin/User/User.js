@@ -1,10 +1,11 @@
+/* eslint-disable react/jsx-no-undef */
 import React, { useEffect, useRef, useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-import { userService } from '@/_services/user_service';
+import {Link } from 'react-router-dom';
+import { userService } from '@/_services';
 
 
 const User = () => {
-    //let navigate = useNavigate();
+    // let navigate = useNavigate();
     const [users,setUsers]=useState([])
     const flag = useRef(false)
 
@@ -21,8 +22,16 @@ const User = () => {
         return ()=> flag.current=true
     },[])
 
+    const delUser=(userId)=>{
+        userService.delUser(userId)
+        .then(res =>{
+            setUsers((current)=> current.filter(user=>user.id !==userId))
+        })
+        .catch(err=>console.log(err))
+    }
+
     // const infos =(userId)=>{
-    //     navigate("../edit/" +userId)
+    //     navigate("/admin/user/edit/" +userId)
     // }
     return (
         <div className='User'>
@@ -33,6 +42,7 @@ const User = () => {
             <table>
                 <thead>
                     <tr>
+                        <th></th>
                         <th>#</th>
                         <th>Nom</th>
                         <th>Prenom</th>
@@ -42,10 +52,11 @@ const User = () => {
                 </thead>
                 <tbody>
                     {
-                        // eslint-disable-next-line array-callback-return
                         users.map(user => (
-                            <tr>
-                                <td>{user.id}</td>
+                            <tr key={user.id}>
+                                 <td><span className='del_ubtn' onClick={()=>delUser(user.id)}>x</span></td>
+                                <td> <Link to={`/admin/user/edit/${user.id}`}>{user.id}</Link></td>
+                                {/* <td onClick={()=>infos(user.id)}>{user.id}</td> */}
                                 <td>{user.nom}</td>
                                 <td>{user.prenom}</td>
                                 <td>{user.email}</td>
