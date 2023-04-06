@@ -1,8 +1,9 @@
-import React,{useState,useNavigate} from 'react';
+import React,{useState} from 'react';
+import {useNavigate} from 'react-router-dom'
 import {userService} from '@/_services'
 
 const UserAdd = () => {
-    // let navigate=useNavigate()
+    let navigate=useNavigate()
     const [user,setUsers]=useState([])
     // const [user,setUsers]=useState({
     //     nom:'',
@@ -19,45 +20,46 @@ const UserAdd = () => {
         })
     }
 
-    //  // Soumission du formulaire
-    //  const onSubmit=(e)=>{
-    //     e.preventDefault()
-    //     // console.log(user)
-    //     // userService.updateUser(user)
-    //     // .then(res => {
-    //     //     navigate('../index')
-    //     // })
-    //     // .catch(err => console.log(err))
-    // }
+     // Soumission du formulaire
+     const onSubmit=(e)=>{
+        e.preventDefault()
+        console.log(user)
+        userService.addUser(user)
+        .then(res => {
+            console.log(res)
+            navigate('../index')
+        })
+        .catch(err => console.log(err))
+    }
 
 
     return (
         <div className='UserAdd'>
             Ajouter un utilisateur
 
-            <form>
+            <form onSubmit={onSubmit}>
                 <div className='group'>
-                    <label htmlFor='login'>Nom</label>
+                    <label htmlFor='nom'>Nom</label>
                     <input type='Text' name='nom' value={user.nom} onChange={onChange}/>
                 </div>
                 <div className='group'>
-                    <label htmlFor='login'>Prénom</label>
+                    <label htmlFor='prenom'>Prénom</label>
                     <input type='Text' name='prenom' value={user.prenom} onChange={onChange}/>
                 </div>
                 <div className='group'>
-                    <label htmlFor='login'>Pseudo</label>
+                    <label htmlFor='pseudo'>Pseudo</label>
                     <input type='Text' name='pseudo' value={user.pseudo} onChange={onChange}/>
                 </div>
                 <div className='group'>
-                    <label htmlFor='login'>Email</label>
+                    <label htmlFor='email'>Email</label>
                     <input type='Text' name='email' value={user.email} onChange={onChange}/>
                 </div>
                 <div className='group'>
-                    <label htmlFor='login'>Password</label>
+                    <label htmlFor='password'>Mot de passe</label>
                     <input type='Password' name='password' value={user.password} onChange={onChange}/>
                 </div>
                  <div className='group'>
-                     <button>Modifier</button>
+                     <button>Ajouter</button>
                  </div>
             </form>
         </div>
