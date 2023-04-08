@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import {ALayout, Dashboard} from '@/pages/Admin';
 import {User, Add, UEdit} from '@/pages/Admin/User';
-import {Cocktail, CEdit} from '@/pages/Admin/Cocktail';
+import {Cocktail, CEdit,CAdd} from '@/pages/Admin/Cocktail';
 import Error from '@/_utils/Error';
 
 const AdminRouter = () => {
@@ -20,7 +20,8 @@ const AdminRouter = () => {
                 </Route>
                 <Route path='cocktail'>
                     <Route path='index' element={<Cocktail/>}/>
-                    <Route path='edit' element={<CEdit/>}/>
+                    <Route path='edit/:cid' element={<CEdit/>}/>
+                    <Route path='add' element={<CAdd/>}/>
                 </Route>
                 <Route path='*' element={<Error/>}/>
 

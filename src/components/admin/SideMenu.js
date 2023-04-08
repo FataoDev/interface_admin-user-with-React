@@ -21,7 +21,8 @@ const SideMenu = () => {
               Cocktail
               <ul>
                 <li><Link to="/admin/cocktail/index">Liste </Link></li>
-                <li><Link to="/admin/cocktail/edit">Ajouter </Link></li>
+                <li><Link to="/admin/cocktail/add">Ajouter </Link></li>
+                <li><Link to="/admin/cocktail/edit">Modifier </Link></li>
               </ul>
             </li>
           </ul>
